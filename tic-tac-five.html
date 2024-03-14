@@ -14,6 +14,7 @@
             <span id="o">o</span>
         <br>
         <button id="start" type="button">Start Game</button>
+        <button id ="restart">Restart</button>
         </div>
 
         <hr>
@@ -57,5 +58,11 @@
             </table>
         </div>
         <script src="js/tic-tac-five.js" async defer></script>
+        <script>
+            const restartButton = document.getElementById('restart');
+            restartButton.addEventListener('click', function() {
+                location.reload();
+            });
+        </script>
     </body>
 </html>
