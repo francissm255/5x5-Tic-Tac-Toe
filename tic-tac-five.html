@@ -6,10 +6,56 @@
         <title>5x5 tic-tac-toe/connect 4</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-    <h1>Tic-Tac-Five</h1>
+        <div id="choice">
+            <span id="x">x</span>
+            <span id="o">o</span>
+        <br>
+        <button id="start" type="button">Start Game</button>
+        </div>
+
+        <hr>
+        <div id="playArea">
+            <table>
+                <tr>
+                    <td></td>
+                    <td class="vertical"></td>
+                    <td class="vertical"></td>
+                    <td class="vertical"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="horizontal"></td>
+                    <td class="vertical horizontal"></td>
+                    <td class="vertical horizontal"></td>
+                    <td class="vertical horizontal"></td>
+                    <td class="horizontal"></td>
+                </tr>
+                <tr>
+                    <td class="horizontal"></td>
+                    <td class="vertical horizontal"></td>
+                    <td class="vertical horizontal"></td>
+                    <td class="vertical horizontal"></td>
+                    <td class="horizontal"></td>
+                </tr>
+                <tr>
+                    <td class="horizontal"></td>
+                    <td class="vertical horizontal"></td>
+                    <td class="vertical horizontal"></td>
+                    <td class="vertical horizontal"></td>
+                    <td class="horizontal"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="vertical"></td>
+                    <td class="vertical"></td>
+                    <td class="vertical"></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
         <script src="js/tic-tac-five.js" async defer></script>
     </body>
 </html>
