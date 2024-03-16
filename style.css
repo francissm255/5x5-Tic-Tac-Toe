@@ -5,7 +5,9 @@ body{
 table{
     margin:auto;
     border-collapse: collapse;
-}
+    border: 4px solid black;
+} 
+
 td{
     width: 100px;
     height: 100px;
