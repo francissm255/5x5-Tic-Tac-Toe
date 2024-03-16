@@ -1,11 +1,17 @@
 document.getElementById('start').addEventListener('click',startGame);
 
+document.getElementById('restart').addEventListener('click', restartGame);
+
 let turn;
 
 function startGame(){
   setTurn();
   setTableListeners();
   document.getElementById('start').removeEventListener('click',startGame);
+}
+
+function restartGame(){
+  location.reload();
 }
 
 function setTableListeners(){
@@ -51,4 +57,5 @@ function setTurn(){
 function setColor(node, color){
   node.style.backgroundColor = color;
 }
+
 
