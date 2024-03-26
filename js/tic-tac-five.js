@@ -23,7 +23,7 @@ function setTableListeners() {
     const cells = document.getElementsByTagName('td');
     for (let c of cells) {
         c.addEventListener('click', setContent);
-        c.addEventListener('click', function () {
+        c.addEventListener('click', function() {
             handleMove(c);
         });
         c.addEventListener('mouseover', enter);
@@ -43,7 +43,9 @@ function handleMove() {
                 cells[i * colCount + j].textContent === cells[i * colCount + j + 1].textContent &&
                 cells[i * colCount + j].textContent === cells[i * colCount + j + 2].textContent &&
                 cells[i * colCount + j].textContent === cells[i * colCount + j + 3].textContent) {
-                alert('Player ' + cells[i * colCount + j].textContent + ' wins horizontally!');
+                setTimeout(() => {
+                    alert('Player ' + cells[i * colCount + j].textContent + ' wins horizontally!');
+                }, 100);
                 return true;
             }
         }
@@ -56,7 +58,9 @@ function handleMove() {
                 cells[i * colCount + j].textContent === cells[(i + 1) * colCount + j].textContent &&
                 cells[i * colCount + j].textContent === cells[(i + 2) * colCount + j].textContent &&
                 cells[i * colCount + j].textContent === cells[(i + 3) * colCount + j].textContent) {
-                alert('Player ' + cells[i * colCount + j].textContent + ' wins vertically!');
+                setTimeout(() => {
+                    alert('Player ' + cells[i * colCount + j].textContent + ' wins vertically!');
+                }, 100);
                 return true;
             }
         }
@@ -69,7 +73,9 @@ function handleMove() {
                 cells[i * colCount + j].textContent === cells[(i + 1) * colCount + j + 1].textContent &&
                 cells[i * colCount + j].textContent === cells[(i + 2) * colCount + j + 2].textContent &&
                 cells[i * colCount + j].textContent === cells[(i + 3) * colCount + j + 3].textContent) {
-                alert('Player ' + cells[i * colCount + j].textContent + ' wins diagonally (top-left to bottom-right)!');
+                setTimeout(() => {
+                    alert('Player ' + cells[i * colCount + j].textContent + ' wins diagonally (top-left to bottom-right)!');
+                }, 100);
                 return true;
             }
         }
@@ -82,7 +88,9 @@ function handleMove() {
                 cells[i * colCount + j].textContent === cells[(i + 1) * colCount + j - 1].textContent &&
                 cells[i * colCount + j].textContent === cells[(i + 2) * colCount + j - 2].textContent &&
                 cells[i * colCount + j].textContent === cells[(i + 3) * colCount + j - 3].textContent) {
-                alert('Player ' + cells[i * colCount + j].textContent + ' wins diagonally (top-right to bottom-left)!');
+                setTimeout(() => {
+                    alert('Player ' + cells[i * colCount + j].textContent + ' wins diagonally (top-right to bottom-left)!');
+                }, 100);
                 return true;
             }
         }
@@ -101,23 +109,32 @@ function setTurn() {
     const o = document.getElementById('o');
     if (turn === 'x') {
         turn = 'o';
-        setColor(o, 'lightgreen');
+        setColor(o, 'lightcoral');
         setColor(x, 'lightgrey');
     } else {
         turn = 'x';
-        setColor(x, 'lightgreen');
+        setColor(x, 'lightblue');
         setColor(o, 'lightgrey');
     }
 }
 
 function setContent() {
+    if (turn === 'x') {
+        setColor(this, 'lightblue');
+    }
+    else {
+        setColor(this, 'lightcoral');
+    }
+    
     this.textContent = turn;
     setTurn();
     this.removeEventListener('click', setContent);
     this.removeEventListener('mouseover', enter);
     this.removeEventListener('mouseout', exit);
-    setColor(this, 'lightgrey');
+    
 }
+
+
 
 function exit() {
     setColor(this, 'lightgrey');
